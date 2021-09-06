@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+/* background kleur en font */
+body {
+  background-color: #00b894;
+  font-family: Helvetica, sans-serif;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h1 {
+  text-align: center;
+  opacity: 75%;
+}
+
+/* de tijdlijn (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* tijdlijn afer (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #16a085;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* text bubbel */
+.textbubble {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/*de rondjes (links) met color scheme */
+/* after zorgt ervoor dat de tijdlijn bubbels kan toevoegen */
+.textbubble::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #16a085;
+  border: 4px solid #2c3e50;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* zet de container links */
+.left {
+  left: 0;
+}
+
+/* zet de container rechts */
+.right {
+  left: 50%;
+}
+
+/* zet pijlen voor linker bubble (wijst naar rechts) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* zet pijlen voor rechter bubble (wijst naar links) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* centreert de rondjes voor de rechter zijde */
+/* after plaatst een element erachter */
+.right::after {
+  left: -16px;
+}
+
+/* text in bubbel */
+.text {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+/* Rounded border */
+hr.rounded {
+  border-top: 8px solid #16a085;
+  border-bottom: #16a085;
+  border-radius: 5px#16a085;
+  background-color: #16a085;
+}
+
+.text-summary {
+  padding: 20px 20px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  align-items: center;
+  margin: 75px 75px 75px 75px;
+}
